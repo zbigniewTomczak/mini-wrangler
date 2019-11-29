@@ -1,3 +1,4 @@
+# CSV Transformer - mini wrangler
 1. How to run the code
 ----------------------
 To build the solution run in command file:
@@ -19,6 +20,7 @@ There is a in-language DSL that is designed to specify the transformations.
 
 For example:
 
+```
 Rules(
 	Column("OrderID").from("Order Number").transformWith(IntegerParser()),
 	Column("OrderDate").from("Year","Month","Day").transformWith(Concatenator("/", DateTimeParser("yyyy/M/d", "yyyy-MM-dd HH:mm"))),
@@ -27,7 +29,7 @@ Rules(
 	Column("Quantity").from("Count").transformWith(BigDecimalParser("en-US")),
 	Column("Unit").transformWith(PlainFiller("kg"))
 )
-
+```
 will:
 - Rename 'Order Number' column to 'OrderID' and parse as Integer
 - Add a new column, concatenating 'Year', 'Month' and 'Day' resulting in 'OrderDate' column and parse it as
