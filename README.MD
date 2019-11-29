@@ -1,5 +1,5 @@
 # CSV Transformer - mini wrangler
-1. How to run the code
+## How to run the code
 ----------------------
 To build the solution run in command file:
 gradlew build
@@ -13,7 +13,7 @@ Alternatively you can import the project into your IDE as a gradle project and r
 class to achieve the same result.
 
 
-2. Architectural overview
+## Architectural overview
 -------------------------
 This wrangler will transform input csv file into output csv file applying transformations to the data.
 There is a in-language DSL that is designed to specify the transformations.
@@ -44,7 +44,7 @@ The rule engine is implemented in package tomczak.mini.wrangler.rule.engine.
 
 If this code was designed to be used as a library, then the class to be used for CSV processing is tomczak.mini.wrangler.CSVWrangler
 
-3. Next steps
+## Next steps
 -------------
 This solution is designed to be open for extensions according to open-closed principle.
 So when different transformation rules will appear in the future, one need to implement 'Transformer' interface with the new transformation rule.
